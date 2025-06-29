@@ -6,14 +6,10 @@ This program covers-
 3.Print the Min Value in the Link List
 4.Search Item in the Link List
 """
-
-
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-
-
 def traverse_and_print(head):
     currentNode = head
     while currentNode:
@@ -66,4 +62,4 @@ node4.next = node5
 traverse_and_print(node1)
 print("Minimnum Value of the List=" + str(find_lowest_value(node1)))
 print("Maximum Value of the List=" + str(find_max_value(node1)))
-print("Item Found="+str(search_element(node1, 3)))
+print("Item Found="+str(search_element(node1, 9)))
