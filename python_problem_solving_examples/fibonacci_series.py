@@ -1,9 +1,9 @@
 # Program to display the Fibonacci sequence up to n-th term
 
 nterms = int(input("How many terms? "))
-
 # first two terms
-n1, n2 = 0, 1
+n1=0
+n2 =1
 count = 0
 
 # check if the number of terms is valid
@@ -17,13 +17,8 @@ elif nterms == 1:
 else:
    print("Fibonacci sequence:")
    while count < nterms:
-       print(n1)
+       print(n1,end=" ")
        nth = n1 + n2
-       # update values
        n1 = n2
        n2 = nth
-       count += 1
-# How many terms? 2
-# Fibonacci sequence:
-# 0
-# 1
+       count = count+1

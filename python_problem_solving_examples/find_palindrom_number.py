@@ -15,7 +15,7 @@ def is_palindrome_math(num):
 
 
 # Example usage
-number = 121
+number = int(input("Enter a number: "))
 if is_palindrome_math(number):
     print(f"{number} is a palindrome.")
 else:

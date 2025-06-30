@@ -7,9 +7,11 @@ class FileOperations:
         self.file_name=file_name
 
     def read_json_file_content(self):
+        data=""
         with open(self.file_name, 'r',encoding="utf-8") as file:
             data = json.load(file)
-        print(data)
+        # print(data)
+        return data
 
 
 file = FileOperations("sample1.json")
