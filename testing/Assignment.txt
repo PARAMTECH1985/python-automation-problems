@@ -1,0 +1,9 @@
+Installation of Python
+Installation of Pycharm IDE
+Configuring the Python in IDE
+
+1.Python program to do basic operations like arithmetic operations?
+2.Python program to call getter and setter methods
+3.Python program to test the rest api data
+4.Python program to write the test cases
+5.Python program to call rest api get call and print all the data

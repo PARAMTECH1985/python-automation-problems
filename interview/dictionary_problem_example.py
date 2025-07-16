@@ -20,21 +20,22 @@ def iterate_nested_dict(nested_dict):
                 print("Sum=" + str(sum))
 
 
-nested_dict = {
-    "documents":
-        {
-            "resume.pdf": 100,
-            "photos":
-                {
-                    "vacation.jpg": 2000,
-                    "family.png": 1500
-                }
-        },
-    "music":
-        {
-            "song1.mp3": 5000,
-            "song2.mp3": 4800
-        }
-}
+nested_dict = \
+    {
+        "documents":
+            {
+                "resume.pdf": 100,
+                "photos":
+                    {
+                        "vacation.jpg": 2000,
+                        "family.png": 1500
+                    }
+            },
+        "music":
+            {
+                "song1.mp3": 5000,
+                "song2.mp3": 4800
+            }
+    }
 
 iterate_nested_dict(nested_dict)
