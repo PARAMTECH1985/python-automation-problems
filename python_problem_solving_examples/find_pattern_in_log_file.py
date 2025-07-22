@@ -20,18 +20,24 @@ def find_patterns_in_log(log_file_path, pattern):
             for line in log_file:
                 if re.search(pattern, line):
                     print(line.strip())
-                    # if 'ERROR' in line.strip():
-                    #     error.update({"ERROR":line.strip()})
-                    #     error_count=error_count+1
-                    #     print("Error Count="+str(error_count))
-                    # if 'WARNING' in line:
-                    #     warning.update({"WARNING":line.strip()})
-                    #     warning_count = warning_count + 1
-                    #     print("Warning Count=" + str(warning_count))
-                    # if 'INFO' in line:
-                    #     info.update({"INFO":line.strip()})
-                    #     info_count = info_count + 1
-                    #     print("Info Count=" + str(info_count))
+                    if 'ERROR' in line.strip():
+                        error["ERROR"]=line.strip()
+                        error_count=error_count+1
+                        print("Error Count="+str(error_count))
+                        print(error)
+                    if 'WARNING' in line:
+                        warning["WARNING"]=line.strip()
+                        warning_count = warning_count + 1
+                        print("Warning Count=" + str(warning_count))
+                        print(warning)
+                    if 'INFO' in line:
+                        info["INFO"]=line.strip()
+                        info_count = info_count + 1
+                        print("Info Count=" + str(info_count))
+                        print(info)
+                    print(error)
+                    print(warning)
+                    print(info)
 
     except FileNotFoundError:
         print(f"Error: Log file not found at {log_file_path}")
