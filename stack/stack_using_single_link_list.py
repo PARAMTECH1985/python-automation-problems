@@ -6,13 +6,14 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-class Stack:
 
+
+class Stack:
     # Initializing a stack.
     # Use a dummy node, which is
     # easier for handling edge cases.
     def __init__(self):
-        self.head = Node("head")
+        self.head = Node("Head")
         self.size = 0
 
     # String representation of the stack
@@ -47,7 +48,7 @@ class Stack:
         node = Node(value)
         node.next = self.head.next  # Make the new node point to the current head
         self.head.next = node  #!!! # Update the head to be the new node
-        self.size += 1
+        self.size =self.size+ 1
 
     # Remove a value from the stack and return.
     def pop(self):
@@ -55,7 +56,7 @@ class Stack:
             raise Exception("Popping from an empty stack")
         remove = self.head.next
         self.head.next = remove.next  #!!! changed
-        self.size -= 1
+        self.size =self.size-1
         return remove.value
 
 
@@ -66,7 +67,7 @@ if __name__ == "__main__":
         stack.push(i)
     print(f"Stack: {stack}")
 
-    for _ in range(1, 6):
+    for _ in range(1, 2):
         top_value = stack.pop()
         print(f"Pop: {top_value}")  # variable name changed
     print(f"Stack: {stack}")

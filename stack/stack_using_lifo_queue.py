@@ -1,7 +1,6 @@
 # Python program to
 # demonstrate stack implementation
 # using queue module
-
 from queue import LifoQueue
 
 # Initializing a stack
