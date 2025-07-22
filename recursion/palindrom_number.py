@@ -15,25 +15,13 @@ def reverse_number_recursion(number):
     if number == 0:
         return 0
     else:
-        # original_number = number
-        # reverse_number = 0
-        # if original_number == number:
-        #     reverse_number = (number%10) * 10**(len(str(number))-1) + reverse_number_recursion(number // 10)  #0+3=3,
-        #else:
-        #     reverse_number = (number%10) * 10**(len(str(number))-1) + reverse_number_recursion(number // 10)  # 0+3=3,
-        # print(number)
-        # print(reverse_number)
-        # number //= 10
-        # print(type(number))
-        #     return (number%10) * 10*(len(str(number))-1) + reverse_number_recursion(number // 10)
         digit = number % 10
         length = len(str(number))
-        # return (number % 10) * 10 ** (len(str(number)) - 1) + reverse_number_recursion(number // 10)
         return digit * 10 ** (length - 1) + reverse_number_recursion(number // 10)
 
 
 def is_palindrom_number(number, reverse_number):
-    if (number == reverse_number):
+    if number == reverse_number:
         return True
     else:
         return False
