@@ -60,12 +60,12 @@ class LinkListClass:
             self.remove_first_node()
             return
         current_node = self.head
-        position=0
-        while current_node is not None and current_node.next is not None and position+1!=index:
+        position = 0
+        while current_node is not None and current_node.next is not None and position + 1 != index:
             current_node = current_node.next
-            position=position+1
+            position = position + 1
         if current_node is not None and current_node.next is not None:
-            current_node=current_node.next
+            current_node = current_node.next
 
     def updateNode(self, data, index):
         current_node = self.head
@@ -103,6 +103,7 @@ class LinkListClass:
         # If the data was not found
         print("Node with the given data not found")
 
+
 ll_object = LinkListClass()
 ll_object.insert_data_at_beginning(10)
 ll_object.insert_data_at_beginning(20)
@@ -132,6 +133,6 @@ print("List After Removing 4th Element from the List")
 ll_object.remove_node(110)
 ll_object.printLL()
 print("List After Removing 110 from the List")
-ll_object.updateNode(200,0)
+ll_object.updateNode(200, 0)
 ll_object.printLL()
 print("List After Updating the List")
