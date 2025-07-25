@@ -7,8 +7,8 @@ def checkPal(str, low, high):
     while low < high:
         if str[low] != str[high]:
             return False
-        low += 1
-        high -= 1
+        low =low+1
+        high =high-1
     return True
 
 
@@ -16,11 +16,9 @@ def checkPal(str, low, high):
 def longestPalindrome(s):
     # Get length of input string
     n = len(s)
-
     # All substrings of length 1 are palindromes
     maxLen = 1
     start = 0
-
     # Nested loop to mark start and end index
     for i in range(n):
         for j in range(i, n):
