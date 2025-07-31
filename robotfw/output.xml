@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.3 on win32)" generated="2025-07-23T03:31:02.104768" rpa="false" schemaversion="5">
+<suite id="s1" name="Example2" source="C:\Users\User\Desktop\python-automation-project\python-automation-problems\robotfw\example2.robot">
+<kw name="Setup suite" type="SETUP">
+<kw name="Log datetime information">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-07-23T03:31:02.543026" level="INFO">${date} = 2025-07-23 03:31:02.543</msg>
+<var>${date}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-07-23T03:31:02.543026" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-23T03:31:02.543026" level="INFO">2025-07-23 03:31:02.543</msg>
+<arg>${date}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-23T03:31:02.543026" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-07-23T03:31:02.543026" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-23T03:31:02.543026" level="INFO">Starting the test</msg>
+<arg>Starting the test</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-23T03:31:02.543026" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-07-23T03:31:02.543026" elapsed="0.000000"/>
+</kw>
+<test id="s1-t1" name="Check geolocation of connection" line="18">
+<kw name="Locate my ip">
+<kw name="detect my public ip">
+<msg time="2025-07-23T03:31:02.558645" level="FAIL">No keyword with name 'detect my public ip' found.</msg>
+<var>${IP}</var>
+<status status="FAIL" start="2025-07-23T03:31:02.558645" elapsed="0.000000">No keyword with name 'detect my public ip' found.</status>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${LOCATEAPI}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="NOT RUN" start="2025-07-23T03:31:02.558645" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/${IP}/geo</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-07-23T03:31:02.558645" elapsed="0.000000"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" start="2025-07-23T03:31:02.558645" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>"${response}" != "${EMPTY}"</arg>
+<arg>Check Geolocation</arg>
+<arg>${response.json()}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-07-23T03:31:02.558645" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-07-23T03:31:02.543026" elapsed="0.015619">No keyword with name 'detect my public ip' found.</status>
+</kw>
+<timeout value="2 minutes"/>
+<status status="FAIL" start="2025-07-23T03:31:02.543026" elapsed="0.015619">No keyword with name 'detect my public ip' found.</status>
+</test>
+<test id="s1-t2" name="Convert message to yoda version" line="21">
+<kw name="Convert to Yoda Speech">
+<msg time="2025-07-23T03:31:02.558645" level="FAIL">Variable '${location}' not found.</msg>
+<arg>${location}</arg>
+<status status="FAIL" start="2025-07-23T03:31:02.558645" elapsed="0.000000">Variable '${location}' not found.</status>
+</kw>
+<timeout value="2 minutes"/>
+<status status="FAIL" start="2025-07-23T03:31:02.558645" elapsed="0.000000">Variable '${location}' not found.</status>
+</test>
+<kw name="Teardown suite" type="TEARDOWN">
+<kw name="Log datetime information">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-07-23T03:31:02.558645" level="INFO">${date} = 2025-07-23 03:31:02.559</msg>
+<var>${date}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-07-23T03:31:02.558645" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-23T03:31:02.558645" level="INFO">2025-07-23 03:31:02.559</msg>
+<arg>${date}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-23T03:31:02.558645" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-07-23T03:31:02.558645" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-23T03:31:02.558645" level="INFO">Test execution completed</msg>
+<arg>Test execution completed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-23T03:31:02.558645" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-07-23T03:31:02.558645" elapsed="0.000000"/>
+</kw>
+<doc>Hello!
+This is an example test suite for testing the requests library keywords along with built-in library keywords</doc>
+<status status="FAIL" start="2025-07-23T03:31:02.120391" elapsed="0.438254"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Example2" id="s1" pass="0" fail="2" skip="0">Example2</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-07-23T03:31:02.543026" level="ERROR">Error in file 'C:\Users\User\Desktop\python-automation-project\python-automation-problems\robotfw\example2.robot' on line 10: Library '..\library\ip_detector.py' does not exist.</msg>
+</errors>
+</robot>
